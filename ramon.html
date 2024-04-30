@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robô Eiti</title>
+<style>
+    .box {
+        width: 1024px;
+        height: 90px;
+        background-color: red;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(0, 0, 0);
+        font-size: 54px;
+    }
+    #robot {
+        display: none;
+        width: 1024px;
+        height: 764px;
+        background-image: url('https://png.pngtree.com/png-vector/20220521/ourmid/pngtree-404-error-robot-malfunctioning-and-emitting-smoke-toy-icon-future-vector-png-image_45634894.jpg');
+        background-size: cover;
+    }
+</style>
+</head>
+<body>
+    <div class="box" onclick="showRobot()" id="caixa_vermelha">
+        exemplo: itjm.eitisolucoes.local
+    </div>
+
+<div id="robot" onclick="showGreeting()"></div>
+
+<script>
+    function showRobot() {
+        var robot = document.getElementById('robot');
+        robot.style.display = 'block';
+        
+        // Clique automaticamente na caixa vermelha após 1 segundos
+        setTimeout(function() {
+            var box = document.querySelector('.box');
+            box.click();
+        }, 3000); // 000 milissegundos = 1 segundos
+    }
+
+    function showGreeting() {
+        var name = prompt("Obrigado pela oportunidade!");
+        if (name != null) {
+            alert("Somos Eiters, " + name + "! Bem-vindo à nossa brincadeira!");
+        }
+    }
+</script>
+
+</body>
+</html>
